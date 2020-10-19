@@ -1,37 +1,11 @@
-## Welcome to GitHub Pages
+# RavenGameJamII
 
-You can use the [editor on GitHub](https://github.com/luisplata/RavenGameJamII/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+El juego constará de alguien huyendo y alguien que te busca.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+El objetivo principal es que sea un runner infinito tipo arcade. para publicarlos en la playstore
 
-### Markdown
+El reto del proyecto es que se sienta que el player y el enemigo hagan parkour.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+La dificultad aumentará en el aumento de los que te persiguen y de la velocidad de movimiento.
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/luisplata/RavenGameJamII/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Como es un runner infinito
