@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# RavenGameJamII
 
-You can use the [editor on GitHub](https://github.com/luisplata/RavenGameJamII/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+El juego constará de alguien huyendo y alguien que te persiga.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Podrás elegir que personaje tomarás (huir o perseguir) (opcional)
 
-### Markdown
+El juego es para publicarlo en la playstore
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Tomar como referencia Vector (runner)
 
-```markdown
-Syntax highlighted code block
+[https://www.youtube.com/watch?v=ZHE8F8OF15o&feature=emb_logo](https://www.youtube.com/watch?v=ZHE8F8OF15o&feature=emb_logo)
 
-# Header 1
-## Header 2
-### Header 3
+Power up
 
-- Bulleted
-- List
+- poder lanzarle algo al otro, para ralentizarlo (quien persigue)
+- tumbar objetos para el perseguidor se ralentice (Quien huye)
 
-1. Numbered
-2. List
+# Versión 2 huye gato
 
-**Bold** and _Italic_ and `Code` text
+Hacer un mapa de una ciudad, con calles y demás. bastante grande. 
 
-[Link](url) and ![Image](src)
-```
+Eres un gato que entro en un barrio de perros, y te toca huir.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Como estas en la ciudad, debes esquivar todo lo que la ciudad te ponga de reto. (obstáculos) y sobrevivir el mayor tiempo posible.
 
-### Jekyll Themes
+[Racing Game Pixel Art Asset Pack](https://groovymcgee.itch.io/car-game-pixel-art)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/luisplata/RavenGameJamII/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Hacer zonas de descanso (escondites que sales en otro lado del mapa) (callejones)
 
-### Support or Contact
+Estos solo se podrán usar cada x tiempo.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+La dificultad esta, en que los perro serán mas y mas rápidos.
+
+El runner será top-down con vista vertical del celular.
+
+controles:
+
+con darle tap a los costados, el gato tomará ese carril.
+
+cuando este en una cruz de calle, podrá darle tap de nuevo al costado y pasará a una nueva calle.
