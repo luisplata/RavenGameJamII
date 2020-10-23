@@ -19,7 +19,7 @@ public class MovimientoPlayer : MonoBehaviour
         botonPanelDerecho.onClick.AddListener(delegate { CambiarDeCarrilHaciaLaDerecha(); });
         botonPanelIzquierdo.onClick.AddListener(delegate { CambiarDeCarrilHaciaLaIzquierda(); });
         corredor.CambiarDePunto(carriles[carrilSeleccionado]);
-        //transform.parent = corredorPista.transform;
+        
     }
 
     private void CambiarDeCarrilHaciaLaDerecha()
@@ -35,7 +35,9 @@ public class MovimientoPlayer : MonoBehaviour
             if(corredor.ElNuevoCorredor != null)
             {
                 corredorPista = corredor.ElNuevoCorredor;
+                corredor.corredorActual = corredorPista;
                 movimientoMapa.GirarHaciaDerecha();
+                movimientoMapa.corredorDelMapa = corredorPista;
                 corredor.puedeVoltear = false;
             }
         }
@@ -55,7 +57,9 @@ public class MovimientoPlayer : MonoBehaviour
             if (corredor.ElNuevoCorredor != null)
             {
                 corredorPista = corredor.ElNuevoCorredor;
+                corredor.corredorActual = corredorPista;
                 movimientoMapa.GirarHaciaIzquierda();
+                movimientoMapa.corredorDelMapa = corredorPista;
                 corredor.puedeVoltear = false;
             }
         }

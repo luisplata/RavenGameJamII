@@ -9,7 +9,7 @@ public class MovimientoCorredor : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] private int escalar;
     public bool puedeVoltear;
-    public GameObject ElNuevoCorredor;
+    public GameObject ElNuevoCorredor, corredorActual;
 
     private void Start()
     {
@@ -49,10 +49,10 @@ public class MovimientoCorredor : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("corredor") && ElNuevoCorredor.name != collision.gameObject.name)
+        if (collision.gameObject.CompareTag("corredor"))
         {
             puedeVoltear = false;
-            ElNuevoCorredor = null;
+            ElNuevoCorredor = corredorActual;
         }
     }
 }
