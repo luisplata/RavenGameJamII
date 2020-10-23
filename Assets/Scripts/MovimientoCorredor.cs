@@ -5,11 +5,11 @@ using UnityEngine;
 public class MovimientoCorredor : MonoBehaviour
 {
     [SerializeField] private GameObject puntoDondeDebeEstar;
-    public GameObject corredor;
     private bool isLLego = true;
     private Rigidbody2D rb;
     [SerializeField] private int escalar;
     public bool puedeVoltear;
+    public GameObject ElNuevoCorredor;
 
     private void Start()
     {
@@ -42,15 +42,17 @@ public class MovimientoCorredor : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("corredor"))
         {
-            puedeVoltear = true;
+            puedeVoltear = (collision.gameObject.name != ElNuevoCorredor.name);
+            ElNuevoCorredor = collision.gameObject;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("corredor"))
+        if (collision.gameObject.CompareTag("corredor") && ElNuevoCorredor.name != collision.gameObject.name)
         {
             puedeVoltear = false;
+            ElNuevoCorredor = null;
         }
     }
 }

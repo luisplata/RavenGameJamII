@@ -6,11 +6,11 @@ public class MovimientoPlayer : MonoBehaviour
 {
     [SerializeField] InputManager inputManager;
     [SerializeField] MovimientoCorredor corredor;
-    [SerializeField] float speed;
     [SerializeField] private Button botonPanelDerecho, botonPanelIzquierdo;
     [SerializeField] private List<GameObject> carriles;
     [SerializeField] private int carrilSeleccionado;
-    [SerializeField] private GameObject corredorPista;
+    [SerializeField] public GameObject corredorPista;
+    [SerializeField] private MovimientoDeMapa movimientoMapa;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -28,9 +28,17 @@ public class MovimientoPlayer : MonoBehaviour
         if(carrilSeleccionado > carriles.Count -1)
         {
             carrilSeleccionado = carriles.Count - 1;
-            Debug.Log("Aqui es donde puede ir a otro direccion de la calle");
         }
         corredor.CambiarDePunto(carriles[carrilSeleccionado]);
+        if (corredor.puedeVoltear)
+        {
+            if(corredor.ElNuevoCorredor != null)
+            {
+                corredorPista = corredor.ElNuevoCorredor;
+                movimientoMapa.GirarHaciaDerecha();
+                corredor.puedeVoltear = false;
+            }
+        }
     }
 
     private void CambiarDeCarrilHaciaLaIzquierda()
@@ -39,16 +47,17 @@ public class MovimientoPlayer : MonoBehaviour
         if (carrilSeleccionado < 0)
         {
             carrilSeleccionado = 0;
-            Debug.Log("Aqui es donde puede ir a otro direccion de la calle");
+            
         }
         corredor.CambiarDePunto(carriles[carrilSeleccionado]);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector2 vectorVelocidad = Vector2.up;
-        rb.velocity = vectorVelocidad * (speed * Time.deltaTime);
-
+        if (corredor.puedeVoltear)
+        {
+            if (corredor.ElNuevoCorredor != null)
+            {
+                corredorPista = corredor.ElNuevoCorredor;
+                movimientoMapa.GirarHaciaIzquierda();
+                corredor.puedeVoltear = false;
+            }
+        }
     }
 }
