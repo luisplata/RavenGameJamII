@@ -12,6 +12,7 @@ public class MovimientoDeMapa : MonoBehaviour
     private float deltaTimeLocal;
     private float gradosParaRotar;
     private bool rotarIzquierda;
+    [SerializeField] private int gradosRotacion;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +23,19 @@ public class MovimientoDeMapa : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 vectorVelocidad = Vector2.down;
         if (debeGirar)
         {
             if (rotarIzquierda)
             {
-                Rotar(-1);
+                Rotar(gradosRotacion*-1);
             }
             else
             {
-                Rotar(1);
+                Rotar(gradosRotacion);
             }
 
-            deltaTimeLocal += 1;
-
+            deltaTimeLocal += gradosRotacion;
             if (Mathf.Abs(deltaTimeLocal) >= Mathf.Abs(gradosParaRotar))
             {
                 debeGirar = false;
@@ -42,11 +43,8 @@ public class MovimientoDeMapa : MonoBehaviour
                 return;
             }
         }
-
-        Vector2 vectorVelocidad = Vector2.down;
         //debe el mapa estar alineado con el player
         float direccionDeLado = (player.transform.position.x - corredorDelMapa.transform.position.x);
-        Debug.Log("en que lado esta: " + Mathf.Abs(direccionDeLado));
         if (Mathf.Abs(direccionDeLado) > 0.01f)
         {
             if (direccionDeLado > 0)

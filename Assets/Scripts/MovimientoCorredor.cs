@@ -40,7 +40,7 @@ public class MovimientoCorredor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("corredor"))
+        if (collision.gameObject.CompareTag("corredor") && ElNuevoCorredor.GetComponent<Corredor>().tipoCorredor != collision.GetComponent<Corredor>().tipoCorredor)
         {
             puedeVoltear = (collision.gameObject.name != ElNuevoCorredor.name);
             ElNuevoCorredor = collision.gameObject;
